@@ -2,7 +2,7 @@ CKEDITOR.editorConfig = function( config )
 {
 		config.filebrowserImageBrowseUrl = Alfresco.constants.URL_CONTEXT + 'page/ckeditor-listimages?site=' + Alfresco.constants.SITE;
 		config.toolbar=[
-		        ['Source','Preview'],
+		        ['Source','Preview', '-', 'Templates' ],
 		        ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Scayt'],
 		        ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
 		        ['Image','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
@@ -13,7 +13,6 @@ CKEDITOR.editorConfig = function( config )
 		        ['Link','Unlink','Anchor'],
 		        ['Maximize','-','About']
 		        ];
-
 
  CKEDITOR.on( 'instanceReady', function( ev )
   {
