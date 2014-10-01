@@ -1,4 +1,4 @@
-﻿/*
+/*
 Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
  */
@@ -11,6 +11,12 @@ CKEDITOR
 							.getPath('templates')
 							+ 'templates/images/'),
 					templates : [
+							{
+								title : 'Saks Global Msg',
+								image : 'template2.gif',
+								description : 'Saks Global Msg',
+								html : '<li class="promotion-banners-title"> FREE SHIPPING, EVERY DAY, EVERY ORDER </li><li class="promotion-banners-detail js-linkable" data-linktarget="FreeShippingDetailsPopUp">Use Code <span>FREESHIP</span><span class="promotion-banners-divider">|</span><a href="#" onclick="s_objectID="http://preview.saksdirect.com/Entry.jsp#_1";return this.s_oc this.s_oc(e):true">Details</a></li>’
+								},
 							{
 								title : 'Saks Promo',
 								image : 'template2.gif',
@@ -40,6 +46,5 @@ CKEDITOR
 								image : 'template3.gif',
 								description : 'A title with some text and a table.',
 								html : '<div style="width: 80%"><h3>Title goes here</h3><table style="width:150px;float: right" cellspacing="0" cellpadding="0" border="1"><caption style="border:solid 1px black"><strong>Table title</strong></caption></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table><p>Type the text here</p></div>'
-							}
-					]
+							} ]
 				});
