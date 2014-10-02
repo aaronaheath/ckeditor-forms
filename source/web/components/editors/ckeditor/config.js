@@ -1,6 +1,7 @@
 CKEDITOR.editorConfig = function( config )
 {
 		config.filebrowserImageBrowseUrl = Alfresco.constants.URL_CONTEXT + 'page/ckeditor-listimages?site=' + Alfresco.constants.SITE;
+		config.extraPlugins = 'changepopup';
 		config.toolbar=[
 		        ['Source','Preview', '-', 'Templates' ],
 		        ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Scayt'],
@@ -11,8 +12,10 @@ CKEDITOR.editorConfig = function( config )
 		        ['Bold','Italic','Strike','-','Subscript','Superscript'],
 		        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
 		        ['Link','Unlink','Anchor'],
-		        ['Maximize','-','About']
+		        ['Maximize','-','About'],
+		        ['changepopup']
 		        ];
+		config.contentsCss='/share/css/global.css';
 
  CKEDITOR.on( 'instanceReady', function( ev )
   {
