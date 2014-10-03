@@ -26,7 +26,7 @@ if(site){
 	doclib=true;
 	site="";
 }
-var url="/slingshot/search?site="+site+"&term=&tag=&maxResults=251&sort=&query="+encodeURI('{"prop_cm_name":"","prop_mimetype":"image/*","datatype":"cm:content"}');
+var url="/slingshot/search?site="+site+"&term=&tag=&maxResults=251&sort=&query="+encodeURI('{"prop_cm_name":"","prop_mimetype":"image/*","datatype":"saks:simpleImage"}');
 var json = remote.call(url);
 if (json.status == 200)
 {
