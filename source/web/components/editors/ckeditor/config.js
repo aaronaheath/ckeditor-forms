@@ -16,6 +16,7 @@ CKEDITOR.editorConfig = function( config )
 		        ['changepopup']
 		        ];
 		config.contentsCss='/share/css/global.css';
+		config.fillEmptyBlocks = false;
 
  CKEDITOR.on( 'instanceReady', function( ev )
   {

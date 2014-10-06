@@ -4,3 +4,5 @@
 *.properties
 
 build/jar/META-INF/modules/editors/ckeditor/skins/v2/images/sprites_ie6.png
+/dist/
+/build/
