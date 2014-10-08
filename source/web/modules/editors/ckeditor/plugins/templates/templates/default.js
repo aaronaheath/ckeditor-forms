@@ -15,7 +15,7 @@ CKEDITOR
 								title : 'Saks Global Msg',
 								image : 'template2.gif',
 								description : 'Saks Global Msg',
-								html : '<div id="promotion-banners" class="promotion-banner-top-global"><ul><li class="promotion-banners-title"> FREE SHIPPING, EVERY DAY, EVERY ORDER </li><li class="promotion-banners-detail js-linkable" data-linktarget="FreeShippingDetailsPopUp">Use Code <span>FREESHIP</span> <span class="promotion-banners-divider">|</span> <a href="#" onclick="s_objectID="http://preview.saksdirect.com/Entry.jsp#_1";return this.s_oc this.s_oc(e):true">Details</a></li></ul></div>'
+								html : '<li><span class="promotion-banners-title">FREE SHIPPING, EVERY DAY, EVERY ORDER </span><div class="promotion-banners-detail js-linkable" data-linktarget="FreeShippingDetailsPopUp">Use Code <span>FREESHIP</span> <span class="promotion-banners-divider">|</span> <a href="#">Details</a></div></li>'
 							},
 							{
 								title : 'Saks Promo',
