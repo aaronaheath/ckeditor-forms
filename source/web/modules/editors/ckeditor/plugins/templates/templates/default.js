@@ -14,8 +14,14 @@ CKEDITOR
 							{
 								title : 'Saks Global Msg',
 								image : 'template2.gif',
-								description : 'Saks Global Msg',
+								description : 'For use with links to popups',
 								html : '<li><span class="promotion-banners-title">FREE SHIPPING, EVERY DAY, EVERY ORDER </span><div class="promotion-banners-detail js-linkable" data-linktarget="FreeShippingDetailsPopUp">Use Code <span>FREESHIP</span> <span class="promotion-banners-divider">|</span> <a href="#">Details</a></div></li>'
+							},
+							{
+								title : 'Saks Global Msg',
+								image : 'template2.gif',
+								description : 'For use with no links or links to pages',
+								html : '<li><span class="promotion-banners-title">FREE SHIPPING, EVERY DAY, EVERY ORDER </span><div class="promotion-banners-detail">Use Code <span>FREESHIP</span> <span class="promotion-banners-divider">|</span> Details</div></li>'
 							},
 							{
 								title : 'Saks Promo',

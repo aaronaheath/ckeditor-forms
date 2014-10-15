@@ -12,7 +12,10 @@
 			
 			CKEDITOR.dialog.add('changepopupdialog', function (config) {
 				return {
-					title: 'Enter a new popup:',
+					title: 'Change Popup',
+					height: 180,
+					width: 250,
+					resizeable: CKEDITOR.DIALOG_RESIZE_NONE,
 					contents: [{
 						id: 'tab1',
 						label: 'this',
@@ -20,13 +23,21 @@
 						expand: true,
 						padding: 0,
 						elements: [{
-							type: 'textarea',
-							id: 'newpopuptext',
-							rows: 1,
-							cols: 40
+							type: 'text',
+							label: 'Change the popup',
+							id: 'newpopuptext'
 						}]
 					}],
 					buttons: [ CKEDITOR.dialog.okButton, CKEDITOR.dialog.cancelButton ],
+					onShow: function () {
+						console.log('setup');
+						var currentPopup = getCurrentPopup();
+						if (!currentPopup) {
+							alert('Invalid Template Found. This is for use with the Popup Template only. Try reloading the template.');
+							return false;
+						}
+						this.getContentElement('tab1', 'newpopuptext').setValue(currentPopup);
+					},
 					onOk: function () {
 						changePopup(this.getContentElement('tab1', 'newpopuptext').getValue());
 					}
@@ -35,20 +46,19 @@
 		}
 	});
 	
+	function getCurrentPopup() {
+		var str = splitAtPopup();
+		if (!str) {
+			return false
+		} else {
+			return str[1].substring(0, str[1].indexOf('"'));
+		}
+	}
 	
 	function changePopup (newPopup) {
-		var editor = CKEDITOR.instances['template_x002e_inline-edit_x002e_inline-edit_x0023_default_prop_cm_content'];
-		var data = editor.getData();
-		var dlt = 'data-linktarget="';
-		
-		if (data.indexOf(dlt) == -1) {
-			alert('No popup value to change. Try reloading the template.');
-			return false;
-		}
-		
-		var str = data.split(dlt);	
-		if (str.length != 2) {
-			alert('Too many popups. Try reloading the template.');
+		var str = splitAtPopup();
+		if (!str) {
+			alert('Invalid Template Found. This is for use with the Popup Template only. Try reloading the template.');
 			return false;
 		}
 		
@@ -58,4 +68,13 @@
 		alert('Popup successfully changed!');
 		return true;
 	}
+	
+	function splitAtPopup () {
+		var editor = CKEDITOR.instances['template_x002e_inline-edit_x002e_inline-edit_x0023_default_prop_cm_content'] || CKEDITOR.instances['template_x002e_edit-metadata_x002e_edit-metadata_x0023_default_prop_cm_content'];
+		var data = editor.getData();
+		var str = data.split('data-linktarget="');
+		
+		return (str.length == 2 ? str : false);
+	}
+	
 })();

@@ -17,6 +17,7 @@ CKEDITOR.editorConfig = function( config )
 		        ];
 		config.contentsCss='/share/css/global.css';
 		config.fillEmptyBlocks = false;
+		config.enterMode = CKEDITOR.ENTER_BR;
 
  CKEDITOR.on( 'instanceReady', function( ev )
   {
