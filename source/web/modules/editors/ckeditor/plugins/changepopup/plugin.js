@@ -30,7 +30,6 @@
 					}],
 					buttons: [ CKEDITOR.dialog.okButton, CKEDITOR.dialog.cancelButton ],
 					onShow: function () {
-						console.log('setup');
 						var currentPopup = getCurrentPopup();
 						if (!currentPopup) {
 							alert('Invalid Template Found. This is for use with the Popup Template only. Try reloading the template.');
@@ -56,13 +55,14 @@
 	}
 	
 	function changePopup (newPopup) {
+		var editor = getEditor();
 		var str = splitAtPopup();
 		if (!str) {
 			alert('Invalid Template Found. This is for use with the Popup Template only. Try reloading the template.');
 			return false;
 		}
 		
-		var newData = str[0] + dlt + newPopup + str[1].substring(str[1].indexOf('"'));
+		var newData = str[0] + 'data-linktarget="' + newPopup + str[1].substring(str[1].indexOf('"'));
 		editor.setData(newData);
 		
 		alert('Popup successfully changed!');
@@ -70,11 +70,15 @@
 	}
 	
 	function splitAtPopup () {
-		var editor = CKEDITOR.instances['template_x002e_inline-edit_x002e_inline-edit_x0023_default_prop_cm_content'] || CKEDITOR.instances['template_x002e_edit-metadata_x002e_edit-metadata_x0023_default_prop_cm_content'];
+		var editor = getEditor();
 		var data = editor.getData();
 		var str = data.split('data-linktarget="');
 		
 		return (str.length == 2 ? str : false);
+	}
+	
+	function getEditor () {
+		return CKEDITOR.instances['template_x002e_inline-edit_x002e_inline-edit_x0023_default_prop_cm_content'] || CKEDITOR.instances['template_x002e_edit-metadata_x002e_edit-metadata_x0023_default_prop_cm_content'];
 	}
 	
 })();
